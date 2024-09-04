@@ -1,0 +1,30 @@
+package com.mynewStore.PageObject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class OrderSumaryPage {
+
+	
+		//1.create object of WebDriver
+		WebDriver ldriver;
+		
+		public OrderSumaryPage(WebDriver rdriver) {
+			ldriver = rdriver;
+			PageFactory.initElements(rdriver, this);  //Search context ,object page
+		}
+		
+		//2.identify WebElements
+		
+		@FindBy(xpath="(//a[@title=\"Proceed to checkout\"])[2]") private WebElement proceed;
+		
+		//3.identity action on Webelement
+		
+		public void clickOnProceedToCheckout() {
+			proceed.click();
+		}
+
+	
+}
